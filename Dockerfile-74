@@ -9,6 +9,10 @@ FROM php:7.4-fpm
 # Set Environment Variables
 ENV DEBIAN_FRONTEND noninteractive
 
+# Add custom china source
+RUN sed -i 's/http:\/\/deb.debian.org/http:\/\/mirrors.aliyun.com/g' /etc/apt/sources.list \
+    && sed -i 's/http:\/\/security.debian.org/http:\/\/mirrors.aliyun.com/g' /etc/apt/sources.list
+
 #
 #--------------------------------------------------------------------------
 # Software's Installation
