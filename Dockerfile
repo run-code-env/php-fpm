@@ -4,7 +4,7 @@
 #--------------------------------------------------------------------------
 #
 
-FROM php:5.6-fpm
+FROM php:7.1-fpm
 
 LABEL maintainer="Mahmoud Zalt <mahmoud@zalt.me>"
 
@@ -45,7 +45,7 @@ RUN set -eux; \
     # Install the PHP mcrypt extention
     docker-php-ext-install mcrypt; \
     # Install the PHP pdo_mysql extention
-    docker-php-ext-install pdo_mysql mysqli; \
+    docker-php-ext-install pdo_mysql; \
     # Install the PHP pdo_pgsql extention
     docker-php-ext-install pdo_pgsql; \
     # Install the PHP gd library
